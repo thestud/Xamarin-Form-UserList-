@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="UserListF.UserEntryPage" 
+             Title="Enter your User Information">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Entry Placeholder="User Name" Text="{Binding UserName}" />
+            <Entry Placeholder="First Name" Text="{Binding FirstName}" />
+            <Entry Placeholder="Last Name" Text="{Binding LastName}" />
+            <Label Text="1. String must consist of a mixture of letters and numerical digits only, with at least one of each." 
+                   LineBreakMode="WordWrap"
+                   LineHeight="1.8"/>
+            <Label Text="2. String must be between 5 and 12 characters in length." 
+                   LineBreakMode="WordWrap"
+                   LineHeight="1.8"/>
+            <Label Text="3. String must not contain any sequence of characters immediately followed by the same sequence"
+                   LineBreakMode="WordWrap"
+                   LineHeight="1.8"/>
+            <Entry Placeholder="Password" Text="{Binding Password}" />
+            <Grid>
+                <Button Text="Save"
+                    Clicked="OnSaveButtonClicked" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
