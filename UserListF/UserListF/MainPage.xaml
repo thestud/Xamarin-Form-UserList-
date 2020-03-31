@@ -11,13 +11,31 @@
         <ToolbarItem Text="+"
                      Clicked="AddUserClicked" />
     </ContentPage.ToolbarItems>
-    <ListView x:Name="listView"
-              Margin="20"
+    <ListView x:Name="listView" HasUnevenRows="True"
               ItemSelected="SelectUser">
+        <ListView.Header>
+            <ContentView Padding="0,5" BackgroundColor="White">
+                <Label FontSize="Large" 
+                   Text="Users" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+            </ContentView>
+        </ListView.Header>
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding Text}"
-                          Detail="{Binding Date}" />
+                <ViewCell>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition  />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout VerticalOptions="FillAndExpand" Padding="5" Grid.Column="0">
+                            <Label FontSize="17"  Text="{Binding UserName}" />
+                            <Label FontSize="12" Text="{Binding FirstName, StringFormat='FirstName: {0}'}" />
+                        </StackLayout>
+                        <StackLayout VerticalOptions="End"  Padding="5"  Grid.Column="1">
+                            <Label  FontSize="12"  Text="{Binding LastName, StringFormat='LastName: {0}'}" />
+                        </StackLayout>
+                    </Grid>
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

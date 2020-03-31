@@ -33,6 +33,28 @@ namespace UserListF
 
             StringValidator stringValidator = new StringValidator();
 
+            // making all fields required
+            if(UserName.Text == null || !stringValidator.validate(UserName.Text))
+            {
+                ErrorLabel.Text = "User Name must be 5 characters long and no longer than 12 characters";
+                UserName.BackgroundColor = Color.Yellow;
+                return;
+            }
+
+            if (FirstName.Text == null || !stringValidator.validate(FirstName.Text))
+            {
+                ErrorLabel.Text = "First Name must be 5 characters long and no longer than 12 characters";
+                FirstName.BackgroundColor = Color.Yellow;
+                return;
+            }
+
+            if (LastName.Text == null || !stringValidator.validate(LastName.Text))
+            {
+                ErrorLabel.Text = "Last Name must be 5 characters long and no longer than 12 characters";
+                LastName.BackgroundColor = Color.Yellow;
+                return;
+            }
+
             // Password is null 
             if (PasswordField.Text == null || (!stringValidator.validate(PasswordField.Text)))
             {
@@ -58,6 +80,9 @@ namespace UserListF
             }
 
             // Password is accepted
+            UserName.BackgroundColor = Color.White;
+            FirstName.BackgroundColor = Color.White;
+            LastName.BackgroundColor = Color.White;
             PasswordField.BackgroundColor = Color.White;
 
             var user = (User)BindingContext;

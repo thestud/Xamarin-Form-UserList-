@@ -16,7 +16,7 @@ namespace UserListF
             {
                 if (database == null)
                 {
-                    database = new UserDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "UserList.db3"));
+                    database = new UserDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "UserListF.db3"));
                 }
                 return database;
             }

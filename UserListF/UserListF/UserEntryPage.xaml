@@ -8,11 +8,11 @@
              Title="Enter your User Information">
     <ContentPage.Content>
         <StackLayout Margin="20">
-            <Entry Placeholder="User Name" Text="{Binding UserName}" />
-            <Entry Placeholder="First Name" Text="{Binding FirstName}" />
-            <Entry Placeholder="Last Name" Text="{Binding LastName}" />
-            <StackLayout Padding="10" />
             <Label x:Name="ErrorLabel" FontSize="18" TextColor="Red" />
+            <Entry Placeholder="User Name" x:Name="UserName" Text="{Binding UserName}" />
+            <Entry Placeholder="First Name" x:Name="FirstName" Text="{Binding FirstName}" />
+            <Entry Placeholder="Last Name" x:Name="LastName" Text="{Binding LastName}" />
+            <StackLayout Padding="10" />
             <Label Text="1. String must consist of a mixture of letters and numerical digits only, with at least one of each." 
                    LineBreakMode="WordWrap"
                    LineHeight="1.8"/>
